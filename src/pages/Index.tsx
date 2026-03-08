@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { ShoppingCart } from "lucide-react";
-import { menuItems, type MenuItem } from "@/lib/menu-data";
+import { burgers, drinks, type MenuItem } from "@/lib/menu-data";
 import MenuCard from "@/components/MenuCard";
 import CartModal, { type CartItem } from "@/components/CartModal";
 
