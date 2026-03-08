@@ -3,6 +3,7 @@ import { ShoppingCart } from "lucide-react";
 import { burgers, drinks, type MenuItem } from "@/lib/menu-data";
 import MenuCard from "@/components/MenuCard";
 import CartModal, { type CartItem } from "@/components/CartModal";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const Index = () => {
   const [cart, setCart] = useState<CartItem[]>([]);
@@ -28,11 +29,17 @@ const Index = () => {
     setCart((prev) => prev.filter((c) => c.id !== id));
   }, []);
 
+  const headerReveal = useScrollReveal(0.1);
+  const burgersReveal = useScrollReveal(0.1);
+  const drinksReveal = useScrollReveal(0.1);
+
   return (
     <div className="min-h-screen bg-background font-body">
       {/* Header */}
-      <header className="flex flex-col items-center gap-3 py-10">
-        {/* 🔄 Troque o logo: substitua /placeholder.svg pelo caminho da sua imagem */}
+      <header
+        ref={headerReveal.ref}
+        className={`flex flex-col items-center gap-3 py-10 opacity-0 ${headerReveal.isVisible ? "animate-fade-scale" : ""}`}
+      >
         <div className="h-24 w-24 overflow-hidden rounded-full border-2 border-primary shadow-[var(--neon-shadow)]">
           <img src="/placeholder.svg" alt="Logo Burger Arena" className="h-full w-full object-cover" />
         </div>
@@ -45,25 +52,29 @@ const Index = () => {
       {/* Menu Grid */}
       <main className="mx-auto max-w-5xl px-4 pb-24 space-y-12">
         {/* Seção Lanches */}
-        <section>
-          <h2 className="mb-6 text-center font-display text-xl font-bold uppercase tracking-wider text-foreground">
+        <section ref={burgersReveal.ref}>
+          <h2
+            className={`mb-6 text-center font-display text-xl font-bold uppercase tracking-wider text-foreground opacity-0 ${burgersReveal.isVisible ? "animate-slide-up" : ""}`}
+          >
             🍔 Lanches
           </h2>
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-            {burgers.map((item) => (
-              <MenuCard key={item.id} item={item} onAdd={addToCart} />
+            {burgers.map((item, i) => (
+              <MenuCard key={item.id} item={item} onAdd={addToCart} delay={i * 100} />
             ))}
           </div>
         </section>
 
         {/* Seção Bebidas */}
-        <section>
-          <h2 className="mb-6 text-center font-display text-xl font-bold uppercase tracking-wider text-foreground">
+        <section ref={drinksReveal.ref}>
+          <h2
+            className={`mb-6 text-center font-display text-xl font-bold uppercase tracking-wider text-foreground opacity-0 ${drinksReveal.isVisible ? "animate-slide-up" : ""}`}
+          >
             🥤 Bebidas
           </h2>
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-            {drinks.map((item) => (
-              <MenuCard key={item.id} item={item} onAdd={addToCart} />
+            {drinks.map((item, i) => (
+              <MenuCard key={item.id} item={item} onAdd={addToCart} delay={i * 100} />
             ))}
           </div>
         </section>

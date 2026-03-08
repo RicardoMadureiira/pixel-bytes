@@ -1,15 +1,23 @@
 import type { MenuItem } from "@/lib/menu-data";
 import { Button } from "@/components/ui/button";
 import { Plus } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 interface MenuCardProps {
   item: MenuItem;
   onAdd: (item: MenuItem) => void;
+  delay?: number;
 }
 
-const MenuCard = ({ item, onAdd }: MenuCardProps) => {
+const MenuCard = ({ item, onAdd, delay = 0 }: MenuCardProps) => {
+  const { ref, isVisible } = useScrollReveal(0.15);
+
   return (
-    <div className="group rounded-xl border border-border bg-card p-3 transition-all duration-300 hover:border-primary/40 hover:shadow-[var(--neon-shadow)]">
+    <div
+      ref={ref}
+      style={{ animationDelay: `${delay}ms` }}
+      className={`group rounded-xl border border-border bg-card p-3 transition-all duration-300 hover:border-primary/40 hover:shadow-[var(--neon-shadow)] opacity-0 ${isVisible ? "animate-fade-up" : ""}`}
+    >
       {/* 🔄 Troque a imagem editando menu-data.ts */}
       <div className="mb-3 aspect-square overflow-hidden rounded-lg bg-secondary">
         <img
