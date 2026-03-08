@@ -1,32 +1,59 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingCart, Github, Linkedin, Mail } from "lucide-react";
 import { burgers, drinks, type MenuItem } from "@/lib/menu-data";
 import MenuCard from "@/components/MenuCard";
 import CartModal, { type CartItem } from "@/components/CartModal";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
+const STORAGE_KEY = "burger-arena-cart";
+
 const Index = () => {
-  const [cart, setCart] = useState<CartItem[]>([]);
+  const [cart, setCart] = useState<CartItem[]>(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      return stored ? JSON.parse(stored) : [];
+    } catch {
+      return [];
+    }
+  });
   const [cartOpen, setCartOpen] = useState(false);
+  const [badgePulse, setBadgePulse] = useState(false);
+
+  // Persist cart to localStorage
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+  }, [cart]);
 
   const totalItems = cart.reduce((sum, i) => sum + i.quantity, 0);
 
   const addToCart = useCallback((item: MenuItem) => {
     setCart((prev) => {
       const existing = prev.find((c) => c.id === item.id);
-      if (existing) return prev.map((c) => c.id === item.id ? { ...c, quantity: c.quantity + 1 } : c);
+      if (existing)
+        return prev.map((c) =>
+          c.id === item.id ? { ...c, quantity: c.quantity + 1 } : c
+        );
       return [...prev, { ...item, quantity: 1 }];
     });
+    setBadgePulse(true);
+    setTimeout(() => setBadgePulse(false), 600);
   }, []);
 
   const updateQuantity = useCallback((id: string, delta: number) => {
     setCart((prev) =>
-      prev.map((c) => c.id === id ? { ...c, quantity: Math.max(1, c.quantity + delta) } : c)
+      prev.map((c) =>
+        c.id === id ? { ...c, quantity: Math.max(1, c.quantity + delta) } : c
+      )
     );
   }, []);
 
   const removeItem = useCallback((id: string) => {
     setCart((prev) => prev.filter((c) => c.id !== id));
+  }, []);
+
+  const clearCart = useCallback(() => {
+    setCart([]);
   }, []);
 
   const headerReveal = useScrollReveal(0.1);
@@ -41,7 +68,11 @@ const Index = () => {
         className={`flex flex-col items-center gap-3 py-10 opacity-0 ${headerReveal.isVisible ? "animate-fade-scale" : ""}`}
       >
         <div className="h-24 w-24 overflow-hidden rounded-full border-2 border-primary shadow-[var(--neon-shadow)]">
-          <img src="/placeholder.svg" alt="Logo Burger Arena" className="h-full w-full object-cover" />
+          <img
+            src="/placeholder.svg"
+            alt="Logo Burger Arena"
+            className="h-full w-full object-cover"
+          />
         </div>
         <h1 className="font-display text-3xl font-black uppercase tracking-widest text-primary md:text-4xl">
           Burger Arena
@@ -87,16 +118,30 @@ const Index = () => {
             Burger Arena
           </h3>
           <p className="text-sm text-[hsl(0,0%,50%)] max-w-md">
-            Projeto desenvolvido como parte do meu portfólio. Landing page de hamburgueria gamer com React, Tailwind CSS e TypeScript.
+            Projeto desenvolvido como parte do meu portfólio. Landing page de
+            hamburgueria gamer com React, Tailwind CSS e TypeScript.
           </p>
           <div className="flex gap-6">
-            <a href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer" className="text-[hsl(0,0%,40%)] transition-colors hover:text-primary">
+            <a
+              href="https://github.com/SEU-USUARIO"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[hsl(0,0%,40%)] transition-colors hover:text-primary"
+            >
               <Github className="h-5 w-5" />
             </a>
-            <a href="https://linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener noreferrer" className="text-[hsl(0,0%,40%)] transition-colors hover:text-primary">
+            <a
+              href="https://linkedin.com/in/SEU-USUARIO"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[hsl(0,0%,40%)] transition-colors hover:text-primary"
+            >
               <Linkedin className="h-5 w-5" />
             </a>
-            <a href="mailto:seu@email.com" className="text-[hsl(0,0%,40%)] transition-colors hover:text-primary">
+            <a
+              href="mailto:seu@email.com"
+              className="text-[hsl(0,0%,40%)] transition-colors hover:text-primary"
+            >
               <Mail className="h-5 w-5" />
             </a>
           </div>
@@ -106,18 +151,27 @@ const Index = () => {
         </div>
       </footer>
 
-
+      {/* Floating Cart Button */}
       <button
         onClick={() => setCartOpen(true)}
         className="fixed bottom-6 right-6 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[var(--neon-shadow-lg)] transition-transform hover:scale-110"
         aria-label="Abrir carrinho"
       >
         <ShoppingCart className="h-6 w-6" />
-        {totalItems > 0 && (
-          <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-destructive text-[10px] font-bold text-destructive-foreground">
-            {totalItems}
-          </span>
-        )}
+        <AnimatePresence>
+          {totalItems > 0 && (
+            <motion.span
+              key={totalItems}
+              initial={{ scale: 0 }}
+              animate={badgePulse ? { scale: [1, 1.4, 1] } : { scale: 1 }}
+              exit={{ scale: 0 }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-destructive text-[10px] font-bold text-destructive-foreground"
+            >
+              {totalItems}
+            </motion.span>
+          )}
+        </AnimatePresence>
       </button>
 
       {/* Cart Modal */}
@@ -127,6 +181,7 @@ const Index = () => {
         items={cart}
         onUpdateQuantity={updateQuantity}
         onRemove={removeItem}
+        onClear={clearCart}
       />
     </div>
   );
