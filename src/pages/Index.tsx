@@ -80,7 +80,35 @@ const Index = () => {
         </section>
       </main>
 
-      {/* Floating Cart Button */}
+      {/* Footer */}
+      <footer className="border-t border-border bg-card py-10">
+        <div className="mx-auto max-w-5xl px-4 flex flex-col items-center gap-4 text-center">
+          <h3 className="font-display text-lg font-bold uppercase tracking-wider text-primary">
+            Burger Arena
+          </h3>
+          <p className="text-sm text-muted-foreground max-w-md">
+            Projeto desenvolvido como parte do meu portfólio. Landing page de hamburgueria gamer com React, Tailwind CSS e TypeScript.
+          </p>
+          <div className="flex gap-4 text-sm text-muted-foreground">
+            <a href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-primary">
+              GitHub
+            </a>
+            <span className="text-border">•</span>
+            <a href="https://linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-primary">
+              LinkedIn
+            </a>
+            <span className="text-border">•</span>
+            <a href="mailto:seu@email.com" className="transition-colors hover:text-primary">
+              E-mail
+            </a>
+          </div>
+          <p className="text-xs text-muted-foreground/60">
+            © {new Date().getFullYear()} Seu Nome. Todos os direitos reservados.
+          </p>
+        </div>
+      </footer>
+
+
       <button
         onClick={() => setCartOpen(true)}
         className="fixed bottom-6 right-6 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[var(--neon-shadow-lg)] transition-transform hover:scale-110"
