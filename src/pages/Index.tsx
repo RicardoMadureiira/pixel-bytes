@@ -86,21 +86,21 @@ const Index = () => {
           <h3 className="font-display text-lg font-bold uppercase tracking-wider text-primary">
             Burger Arena
           </h3>
-          <p className="text-sm text-muted-foreground max-w-md">
+          <p className="text-sm text-[hsl(0,0%,50%)] max-w-md">
             Projeto desenvolvido como parte do meu portfólio. Landing page de hamburgueria gamer com React, Tailwind CSS e TypeScript.
           </p>
           <div className="flex gap-6">
-            <a href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary">
+            <a href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer" className="text-[hsl(0,0%,40%)] transition-colors hover:text-primary">
               <Github className="h-5 w-5" />
             </a>
-            <a href="https://linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary">
+            <a href="https://linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener noreferrer" className="text-[hsl(0,0%,40%)] transition-colors hover:text-primary">
               <Linkedin className="h-5 w-5" />
             </a>
-            <a href="mailto:seu@email.com" className="text-muted-foreground transition-colors hover:text-primary">
+            <a href="mailto:seu@email.com" className="text-[hsl(0,0%,40%)] transition-colors hover:text-primary">
               <Mail className="h-5 w-5" />
             </a>
           </div>
-          <p className="text-xs text-muted-foreground/60">
+          <p className="text-xs text-[hsl(0,0%,30%)]">
             © {new Date().getFullYear()} Seu Nome. Todos os direitos reservados.
           </p>
         </div>
