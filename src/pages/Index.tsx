@@ -49,7 +49,7 @@ const Index = () => {
           <h2 className="mb-6 text-center font-display text-xl font-bold uppercase tracking-wider text-foreground">
             🍔 Lanches
           </h2>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
             {burgers.map((item) => (
               <MenuCard key={item.id} item={item} onAdd={addToCart} />
             ))}
@@ -61,7 +61,7 @@ const Index = () => {
           <h2 className="mb-6 text-center font-display text-xl font-bold uppercase tracking-wider text-foreground">
             🥤 Bebidas
           </h2>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
             {drinks.map((item) => (
               <MenuCard key={item.id} item={item} onAdd={addToCart} />
             ))}
