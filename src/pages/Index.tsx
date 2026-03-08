@@ -43,15 +43,30 @@ const Index = () => {
       </header>
 
       {/* Menu Grid */}
-      <main className="mx-auto max-w-5xl px-4 pb-24">
-        <h2 className="mb-6 text-center font-display text-xl font-bold uppercase tracking-wider text-foreground">
-          Cardápio
-        </h2>
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {menuItems.map((item) => (
-            <MenuCard key={item.id} item={item} onAdd={addToCart} />
-          ))}
-        </div>
+      <main className="mx-auto max-w-5xl px-4 pb-24 space-y-12">
+        {/* Seção Lanches */}
+        <section>
+          <h2 className="mb-6 text-center font-display text-xl font-bold uppercase tracking-wider text-foreground">
+            🍔 Lanches
+          </h2>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {burgers.map((item) => (
+              <MenuCard key={item.id} item={item} onAdd={addToCart} />
+            ))}
+          </div>
+        </section>
+
+        {/* Seção Bebidas */}
+        <section>
+          <h2 className="mb-6 text-center font-display text-xl font-bold uppercase tracking-wider text-foreground">
+            🥤 Bebidas
+          </h2>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {drinks.map((item) => (
+              <MenuCard key={item.id} item={item} onAdd={addToCart} />
+            ))}
+          </div>
+        </section>
       </main>
 
       {/* Floating Cart Button */}
