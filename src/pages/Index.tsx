@@ -81,7 +81,7 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-card py-10">
+      <footer className="border-t border-border bg-[hsl(0,0%,6%)] py-10">
         <div className="mx-auto max-w-5xl px-4 flex flex-col items-center gap-4 text-center">
           <h3 className="font-display text-lg font-bold uppercase tracking-wider text-primary">
             Burger Arena
@@ -89,17 +89,15 @@ const Index = () => {
           <p className="text-sm text-muted-foreground max-w-md">
             Projeto desenvolvido como parte do meu portfólio. Landing page de hamburgueria gamer com React, Tailwind CSS e TypeScript.
           </p>
-          <div className="flex gap-4 text-sm text-muted-foreground">
-            <a href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-primary">
-              GitHub
+          <div className="flex gap-6">
+            <a href="https://github.com/SEU-USUARIO" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary">
+              <Github className="h-5 w-5" />
             </a>
-            <span className="text-border">•</span>
-            <a href="https://linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-primary">
-              LinkedIn
+            <a href="https://linkedin.com/in/SEU-USUARIO" target="_blank" rel="noopener noreferrer" className="text-muted-foreground transition-colors hover:text-primary">
+              <Linkedin className="h-5 w-5" />
             </a>
-            <span className="text-border">•</span>
-            <a href="mailto:seu@email.com" className="transition-colors hover:text-primary">
-              E-mail
+            <a href="mailto:seu@email.com" className="text-muted-foreground transition-colors hover:text-primary">
+              <Mail className="h-5 w-5" />
             </a>
           </div>
           <p className="text-xs text-muted-foreground/60">
