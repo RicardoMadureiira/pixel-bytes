@@ -53,9 +53,8 @@ const MenuCard = ({ item, onAdd, delay = 0 }: MenuCardProps) => {
         >
           R$ {item.price.toFixed(2).replace(".", ",")}
         </span>
-        <Button variant="neon" size="sm" onClick={() => onAdd(item)}>
-          <Plus className="h-4 w-4" />
-          Add
+        <Button variant="neon" size="icon" onClick={() => onAdd(item)}>
+          <ShoppingCart className="h-4 w-4" />
         </Button>
       </div>
     </div>
