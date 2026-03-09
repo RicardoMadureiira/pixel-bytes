@@ -1,10 +1,16 @@
-// =============================================
-// 🍔 DADOS DO CARDÁPIO — EDITE AQUI!
-// Para trocar as imagens, substitua os caminhos
-// abaixo por suas próprias imagens em src/assets/
-// Exemplo: import burger1 from "@/assets/burger1.png"
-// =============================================
+import burger1 from "@/assets/burguers/burger1.png";
+import burger2 from "@/assets/burguers/burger2.png";
+import burger3 from "@/assets/burguers/burger3.png";
+import burger4 from "@/assets/burguers/burger4.png";
+import burger5 from "@/assets/burguers/burger5.png";
+import burger6 from "@/assets/burguers/burger6.png";
+import burger7 from "@/assets/burguers/burger7.png";
+import burger8 from "@/assets/burguers/burger8.png";
 
+import drink1 from "@/assets/refrigerantes/cocacola.png";
+import drink2 from "@/assets/refrigerantes/cocacola0.png";
+import drink3 from "@/assets/refrigerantes/guarana.png";
+import drink4 from "@/assets/refrigerantes/sprite.png";
 export interface MenuItem {
   id: string;
   name: string;
@@ -17,66 +23,74 @@ export interface MenuItem {
 export const burgers: MenuItem[] = [
   {
     id: "b1",
-    name: "Smash Classic",
-    description: "Blend bovino, cheddar, bacon crocante e molho da casa",
+    name: "Power-Up Burger",
+    description:
+      "Burger artesanal 180g suculento com toque de páprica e pimenta. Molho XP de maionese caseira com alho, páprica, sriracha e limão. ",
     price: 28.9,
-    image: "/placeholder.svg", // 🔄 Troque pela sua imagem
+    image: burger1,
     category: "burger",
   },
   {
     id: "b2",
-    name: "Double Kill",
-    description: "Dois blends, queijo duplo, cebola caramelizada",
+    name: "Critical Strike Burger",
+    description:
+      "O hambúrguer que causa dano massivo! Carne suculenta, queijo cheddar derretido e maionese de mostarda picante. Prepare-se para um ataque direto ao seu paladar!",
     price: 34.9,
-    image: "/placeholder.svg", // 🔄 Troque pela sua imagem
+    image: burger2,
     category: "burger",
   },
   {
     id: "b3",
-    name: "Headshot Bacon",
-    description: "Blend artesanal, bacon defumado, alface e tomate",
+    name: "Mage Melt",
+    description:
+      "Feitiçaria pura com burger 180g, cebola caramelizada, cheddar cremoso e molho secreto encantado.",
     price: 32.9,
-    image: "/placeholder.svg", // 🔄 Troque pela sua imagem
+    image: burger3,
     category: "burger",
   },
   {
     id: "b4",
-    name: "Combo GG",
-    description: "Triple smash, 3 queijos, molho especial e picles",
+    name: "Buff Burger",
+    description:
+      "+50 de força! Burger duplo, queijo prato, maionese de alho e molho dragão flamejante. Ideal para tanques!",
     price: 42.9,
-    image: "/placeholder.svg", // 🔄 Troque pela sua imagem
+    image: burger4,
     category: "burger",
   },
   {
     id: "b5",
-    name: "Veggie Quest",
-    description: "Hambúrguer de grão-de-bico, rúcula e molho tahine",
+    name: "XP Bacon",
+    description:
+      "Ganhe +100 de sabor com esse hambúrguer épico de bacon crocante, queijo prato e maionese da casa. Ideal pra upar seu humor na missão!",
     price: 29.9,
-    image: "/placeholder.svg", // 🔄 Troque pela sua imagem
+    image: burger5,
     category: "burger",
   },
   {
     id: "b6",
-    name: "Chicken Winner",
-    description: "Frango crocante, coleslaw e maionese sriracha",
+    name: "Mystic Burger",
+    description:
+      "+40 de inteligência! Receita secreta dos sábios: hambúrguer de grão de bico, tofu selado e molho verde místico. Buff perfeito para mentes brilhantes.",
     price: 30.9,
-    image: "/placeholder.svg", // 🔄 Troque pela sua imagem
+    image: burger6,
     category: "burger",
   },
   {
     id: "b7",
-    name: "Boss Burger",
-    description: "Blend angus, queijo brie, cebola roxa e rúcula",
+    name: "Final Boss",
+    description:
+      "Encare o desafio! Triplo burger, cheddar, bacon, cebola crispy e maionese infernal. Requer coragem (e apetite)!",
     price: 38.9,
-    image: "/placeholder.svg", // 🔄 Troque pela sua imagem
+    image: burger7,
     category: "burger",
   },
   {
     id: "b8",
-    name: "Rage Quit",
-    description: "Blend picante, pimenta jalapeño, pepper jack e sriracha",
+    name: "Shadow Cheese",
+    description:
+      "Cheddar dark, carne defumada e molho sombrio com alho negro. Pra quem curte um mistério no sabor.",
     price: 35.9,
-    image: "/placeholder.svg", // 🔄 Troque pela sua imagem
+    image: burger8,
     category: "burger",
   },
 ];
@@ -84,34 +98,37 @@ export const burgers: MenuItem[] = [
 export const drinks: MenuItem[] = [
   {
     id: "d1",
-    name: "Coca-Cola",
-    description: "Lata 350ml gelada",
+    name: "Coca-Cola - 350ml",
+    description:
+      "Bebida clássica dos heróis. Efeito imediato: +20 em velocidade e +15 em carisma.",
     price: 7.9,
-    image: "/placeholder.svg", // 🔄 Troque pela sua imagem
+    image: drink1,
     category: "drink",
   },
   {
     id: "d2",
-    name: "Guaraná",
-    description: "Lata 350ml gelada",
+    name: "Coca Cola - Zero",
+    description: "Zero açúcar. Efeito: +10 em agilidade, -5 em culpa.",
     price: 7.9,
-    image: "/placeholder.svg", // 🔄 Troque pela sua imagem
+    image: drink2,
     category: "drink",
   },
   {
     id: "d3",
-    name: "Sprite",
-    description: "Lata 350ml gelada",
+    name: "Guaraná - 350ml",
+    description:
+      "Direto da Amazônia digital. Efeito: +25 em stamina e +10 em vibe tropical.",
     price: 7.9,
-    image: "/placeholder.svg", // 🔄 Troque pela sua imagem
+    image: drink3,
     category: "drink",
   },
   {
     id: "d4",
-    name: "Suco Natural",
-    description: "Laranja ou limão — 300ml",
+    name: "Sprite - 350ml",
+    description:
+      "Refrescância elemental nível máximo. Efeito: +30 em frescor, chance de crítico contra calor.",
     price: 9.9,
-    image: "/placeholder.svg", // 🔄 Troque pela sua imagem
+    image: drink4,
     category: "drink",
   },
 ];

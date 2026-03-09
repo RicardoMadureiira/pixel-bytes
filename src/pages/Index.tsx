@@ -88,7 +88,7 @@ const Index = () => {
           className="font-display text-3xl font-black uppercase tracking-widest text-primary md:text-5xl"
           style={{ textShadow: "var(--neon-shadow)" }}
         >
-          Burger Arena
+          Pixel Bytes
         </h1>
         <p className="text-sm text-zinc-500 tracking-widest uppercase font-display">
           SUBA DE NÍVEL NO SABOR!
@@ -112,7 +112,7 @@ const Index = () => {
             <h2
               className={`text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-100 opacity-0 ${burgersReveal.isVisible ? "animate-slide-up" : ""}`}
             >
-              🍔 Lanches
+              🍔 Escolha seu Buff 🍔
             </h2>
             <div
               className="h-px w-16"
@@ -140,7 +140,7 @@ const Index = () => {
             <h2
               className={`text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-100 opacity-0 ${drinksReveal.isVisible ? "animate-slide-up" : ""}`}
             >
-              🥤 Bebidas
+              ⚗️ Poções 🧪
             </h2>
             <div
               className="h-px w-16"
@@ -176,7 +176,7 @@ const Index = () => {
             className="font-display text-lg font-black uppercase tracking-widest text-primary"
             style={{ textShadow: "var(--neon-shadow)" }}
           >
-            Burger Arena
+            Pixel Bytes
           </h3>
           <p className="text-sm text-zinc-600 max-w-md leading-relaxed">
             Projeto desenvolvido como parte do meu portfólio. Landing page de
@@ -208,7 +208,8 @@ const Index = () => {
             </a>
           </div>
           <p className="text-xs text-zinc-700">
-            © {new Date().getFullYear()} Seu Nome. Todos os direitos reservados.
+            © {new Date().getFullYear()} Ricardo Madureira. Todos os direitos
+            reservados.
           </p>
         </div>
       </footer>
