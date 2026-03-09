@@ -211,7 +211,7 @@ const Index = () => {
       {/* Floating Cart Button */}
       <button
         onClick={() => setCartOpen(true)}
-        className="fixed bottom-6 right-6 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform hover:scale-110"
+        className={`fixed bottom-6 right-4 sm:right-6 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform hover:scale-110 ${badgePulse ? "animate-bounce-once" : ""}`}
         style={{ boxShadow: "var(--neon-shadow-lg)" }}
         aria-label="Abrir carrinho"
       >
@@ -221,7 +221,7 @@ const Index = () => {
             <motion.span
               key={totalItems}
               initial={{ scale: 0 }}
-              animate={badgePulse ? { scale: [1, 1.4, 1] } : { scale: 1 }}
+              animate={{ scale: 1 }}
               exit={{ scale: 0 }}
               transition={{ duration: 0.35, ease: "easeOut" }}
               className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-destructive text-[10px] font-bold text-destructive-foreground"
