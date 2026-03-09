@@ -192,13 +192,15 @@ const Index = () => {
               href="https://www.linkedin.com/in/ricardo-madureira-490022245/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-600 transition-colors hover:text-primary"
+              aria-label="LinkedIn de Ricardo Madureira"
+              className="text-zinc-400 transition-colors hover:text-primary"
             >
               <Linkedin className="h-5 w-5" />
             </a>
             <a
               href="mailto:ricardomadureira.dev@gmail.com"
-              className="text-zinc-600 transition-colors hover:text-primary"
+              aria-label="Enviar email para Ricardo Madureira"
+              className="text-zinc-400 transition-colors hover:text-primary"
             >
               <Mail className="h-5 w-5" />
             </a>
