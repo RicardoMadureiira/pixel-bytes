@@ -130,7 +130,14 @@ const Index = () => {
         </section>
 
         {/* Seção Bebidas */}
-        <section>
+        <section
+          ref={drinksReveal.ref}
+          style={{
+            opacity: drinksReveal.isVisible ? 1 : 0,
+            transform: drinksReveal.isVisible ? "translateY(0)" : "translateY(24px)",
+            transition: "opacity 0.5s ease-out, transform 0.5s ease-out",
+          }}
+        >
           <div className="mb-8 flex flex-col items-center gap-2">
             <h2 className="text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-100">
               ⚗️ Poções 🧪
