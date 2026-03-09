@@ -89,7 +89,7 @@ const Index = () => {
         >
           Pixel Bytes
         </h1>
-        <p className="text-sm text-zinc-500 tracking-widest uppercase font-display">
+        <p className="text-sm text-zinc-400 tracking-widest uppercase font-display">
           SUBA DE NÍVEL NO SABOR!
         </p>
         <div
