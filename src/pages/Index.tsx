@@ -57,8 +57,11 @@ const Index = () => {
     setCart([]);
   }, []);
 
+  const burgersReveal = useScrollReveal(0.1);
+  const drinksReveal = useScrollReveal(0.1);
+
   return (
-    <div className="min-h-screen bg-zinc-950 font-body text-zinc-100 animate-fade-in">
+    <div className="min-h-screen bg-zinc-950 font-body text-zinc-100">
       {/* Header */}
       <header
         className="relative flex flex-col items-center gap-3 py-28"
