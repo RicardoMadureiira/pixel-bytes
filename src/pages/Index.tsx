@@ -128,7 +128,7 @@ const Index = () => {
                 key={item.id}
                 item={item}
                 onAdd={addToCart}
-                delay={i * 100}
+                delay={i * 150}
               />
             ))}
           </div>
