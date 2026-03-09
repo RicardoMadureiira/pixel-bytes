@@ -67,7 +67,7 @@ const Index = () => {
       {/* Header */}
       <header
         ref={headerReveal.ref}
-        className={`relative flex flex-col items-center gap-3 py-28 opacity-0 ${headerReveal.isVisible ? "animate-fade-scale" : ""}`}
+        className={`relative flex flex-col items-center gap-3 py-28 ${headerReveal.isVisible ? "animate-fade-scale" : "opacity-0"}"}"}`}
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(9,9,11,0.55) 0%, rgba(9,9,11,0.92) 100%), url(${bgRestaurant})`,
           backgroundSize: "cover",
@@ -110,7 +110,7 @@ const Index = () => {
         <section ref={burgersReveal.ref}>
           <div className="mb-8 flex flex-col items-center gap-2">
             <h2
-              className={`text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-100 opacity-0 ${burgersReveal.isVisible ? "animate-slide-up" : ""}`}
+              className={`text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-100 ${burgersReveal.isVisible ? "animate-slide-up" : "opacity-0"}`}
             >
               🍔 Escolha seu Buff 🍔
             </h2>
@@ -138,7 +138,7 @@ const Index = () => {
         <section ref={drinksReveal.ref}>
           <div className="mb-8 flex flex-col items-center gap-2">
             <h2
-              className={`text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-100 opacity-0 ${drinksReveal.isVisible ? "animate-slide-up" : ""}`}
+              className={`text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-100 ${drinksReveal.isVisible ? "animate-slide-up" : "opacity-0"}`}
             >
               ⚗️ Poções 🧪
             </h2>
