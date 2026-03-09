@@ -293,7 +293,7 @@ const CartModal = ({
             {addressLine}
           </motion.div>
 
-          <div className="text-xs text-zinc-600">
+          <div className="text-xs text-zinc-400">
             Jogador: <span className="text-zinc-400 font-semibold">{name}</span>
           </div>
 

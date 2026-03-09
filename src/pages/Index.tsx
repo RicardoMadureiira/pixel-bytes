@@ -184,7 +184,8 @@ const Index = () => {
               href="https://github.com/RicardoMadureiira"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-600 transition-colors hover:text-primary"
+              aria-label="GitHub de Ricardo Madureira"
+              className="text-zinc-400 transition-colors hover:text-primary"
             >
               <Github className="h-5 w-5" />
             </a>

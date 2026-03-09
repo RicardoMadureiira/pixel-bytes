@@ -55,7 +55,7 @@ const MenuCard = ({ item, onAdd }: MenuCardProps) => {
         >
           R$ {item.price.toFixed(2).replace(".", ",")}
         </span>
-        <Button variant="neon" size="icon" onClick={() => onAdd(item)}>
+        <Button variant="neon" size="icon" onClick={() => onAdd(item)} aria-label={`Adicionar ${item.name} ao carrinho`}>
           <ShoppingCart className="h-4 w-4" />
         </Button>
       </div>
