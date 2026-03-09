@@ -31,6 +31,10 @@ const MenuCard = ({ item, onAdd }: MenuCardProps) => {
         <img
           src={item.image}
           alt={item.name}
+          width={400}
+          height={400}
+          loading="lazy"
+          decoding="async"
           className={`transition-transform duration-300 group-hover:scale-110 ${
             item.category === "drink"
               ? "h-full w-auto object-contain"
