@@ -287,7 +287,7 @@ const CartModal = ({
           </motion.div>
 
           <div className="text-xs text-zinc-600">
-            Nome: <span classNaJogadortext-zinc-400 font-semibold">{name}</span>
+            Jogador: <span className="text-zinc-400 font-semibold">{name}</span>
           </div>
 
           <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-xs text-amber-400/80">
