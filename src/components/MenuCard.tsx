@@ -1,22 +1,16 @@
 import type { MenuItem } from "@/lib/menu-data";
 import { Button } from "@/components/ui/button";
 import { ShoppingCart } from "lucide-react";
-import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 interface MenuCardProps {
   item: MenuItem;
   onAdd: (item: MenuItem) => void;
-  delay?: number;
 }
 
-const MenuCard = ({ item, onAdd, delay = 0 }: MenuCardProps) => {
-  const { ref, isVisible } = useScrollReveal(0.15);
-
+const MenuCard = ({ item, onAdd }: MenuCardProps) => {
   return (
     <div
-      ref={ref}
       style={{
-        animationDelay: `${delay}ms`,
         borderColor: "hsl(var(--border))",
         transition: "border-color 0.3s, box-shadow 0.3s",
       }}
@@ -31,7 +25,7 @@ const MenuCard = ({ item, onAdd, delay = 0 }: MenuCardProps) => {
           "hsl(var(--border))";
         (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
       }}
-      className={`group flex flex-col rounded-xl border bg-zinc-900 p-3 ${isVisible ? "animate-fade-up" : "opacity-0"}`}
+      className="group flex flex-col rounded-xl border bg-zinc-900 p-3"
     >
       <div className="mb-3 aspect-square overflow-hidden rounded-lg bg-zinc-800 flex items-center justify-center p-2">
         <img
