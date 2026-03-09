@@ -57,7 +57,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-zinc-950 font-body text-zinc-100">
+    <div className="min-h-screen bg-zinc-950 font-body text-zinc-100 animate-fade-in">
       {/* Header */}
       <header
         className="relative flex flex-col items-center gap-3 py-28"
