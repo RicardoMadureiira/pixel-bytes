@@ -1,20 +1,16 @@
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 
 export function useScrollReveal(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const el = ref.current;
     if (!el) return;
 
-    // If already in viewport on mount, show immediately without animation
+    // Check synchronously before paint — no flicker for elements already in viewport
     const rect = el.getBoundingClientRect();
-    if (
-      rect.top < window.innerHeight &&
-      rect.bottom > 0 &&
-      rect.top >= 0
-    ) {
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
       setIsVisible(true);
       return;
     }
