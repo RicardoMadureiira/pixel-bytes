@@ -201,14 +201,13 @@ const CartModal = ({
               {/* Form */}
               <div className="space-y-2">
                 <input
-                  placeholder="Jogador
-                  value={name}
+                  placeholder="Jogador                  value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-zinc-100 placeholder:text-zinc-600 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
                 />
                 <input
                   placeholder="CEP 
-                  value={cep}
+value={cep}
                   onChange={(e) => handleCepChange(e.target.value)}
                   maxLength={8}
                   className="w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-zinc-100 placeholder:text-zinc-600 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
@@ -287,7 +286,7 @@ const CartModal = ({
           </motion.div>
 
           <div className="text-xs text-zinc-600">
-            Nome: <span className="text-zinc-400 font-semibold">{name}</span>
+            Nome: <span classNaJogadortext-zinc-400 font-semibold">{name}</span>
           </div>
 
           <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-xs text-amber-400/80">
