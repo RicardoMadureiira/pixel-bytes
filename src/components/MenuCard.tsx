@@ -25,7 +25,7 @@ const MenuCard = ({ item, onAdd }: MenuCardProps) => {
           "hsl(var(--border))";
         (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
       }}
-      className="group flex flex-col rounded-xl border bg-zinc-900 p-3"
+      className="group flex flex-col rounded-xl border bg-zinc-900 p-4"
     >
       <div className="mb-3 aspect-square overflow-hidden rounded-lg bg-zinc-800 flex items-center justify-center p-2">
         <img
@@ -41,7 +41,7 @@ const MenuCard = ({ item, onAdd }: MenuCardProps) => {
       <h3 className="font-display text-sm font-bold uppercase tracking-wide text-zinc-100">
         {item.name}
       </h3>
-      <p className="mt-1 flex-1 text-xs text-zinc-500 leading-relaxed line-clamp-3">
+      <p className="mt-1 flex-1 text-xs text-zinc-500 leading-relaxed">
         {item.description}
       </p>
       <div className="mt-3 flex items-center justify-between">
