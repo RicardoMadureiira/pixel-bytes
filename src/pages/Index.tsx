@@ -203,7 +203,7 @@ const Index = () => {
               <Mail className="h-5 w-5" />
             </a>
           </div>
-          <p className="text-xs text-zinc-700">
+          <p className="text-xs text-zinc-500">
             © {new Date().getFullYear()} Ricardo Madureira. Todos os direitos
             reservados.
           </p>
