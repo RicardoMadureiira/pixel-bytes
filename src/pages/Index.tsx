@@ -75,7 +75,7 @@ const Index = () => {
         }}
       >
         <div
-          className="h-24 w-24 overflow-hidden rounded-full border-2 border-primary"
+          className="h-40 w-40 overflow-hidden rounded-full border-2 border-primary"
           style={{ boxShadow: "var(--neon-shadow-lg)" }}
         >
           <img
