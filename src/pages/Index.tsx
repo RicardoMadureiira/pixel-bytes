@@ -106,8 +106,8 @@ const Index = () => {
           ref={burgersReveal.ref}
           style={{
             opacity: burgersReveal.isVisible ? 1 : 0,
-            transform: burgersReveal.isVisible ? "translateY(0)" : "translateY(24px)",
-            transition: "opacity 0.5s ease-out, transform 0.5s ease-out",
+            transform: burgersReveal.isVisible ? "translateX(0)" : "translateX(48px)",
+            transition: "opacity 0.6s ease-out, transform 0.6s ease-out",
           }}
         >
           <div className="mb-8 flex flex-col items-center gap-2">
