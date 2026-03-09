@@ -4,6 +4,7 @@ import { ShoppingCart, Github, Linkedin, Mail } from "lucide-react";
 import { burgers, drinks, type MenuItem } from "@/lib/menu-data";
 import MenuCard from "@/components/MenuCard";
 import CartModal, { type CartItem } from "@/components/CartModal";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import logoBurger from "@/assets/LogoBurger.png";
 import bgRestaurant from "@/assets/bg-restaurant.png";
 
