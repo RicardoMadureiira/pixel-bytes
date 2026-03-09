@@ -39,7 +39,7 @@ const MenuCard = ({ item, onAdd, delay = 0 }: MenuCardProps) => {
           alt={item.name}
           className={`transition-transform duration-300 group-hover:scale-110 ${
             item.category === "drink"
-              ? "h-full w-auto object-contain drop-shadow-[0_0_8px_hsl(var(--neon-glow)/0.3)]"
+              ? "h-full w-auto object-contain"
               : "h-full w-full object-cover"
           }`}
         />
