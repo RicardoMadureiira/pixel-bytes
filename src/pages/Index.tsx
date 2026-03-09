@@ -7,6 +7,7 @@ import CartModal, { type CartItem } from "@/components/CartModal";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 // import { burguer1 } from "@/assets/burguers";
 import logoBurger from "@/assets/LogoBurger.png";
+import bgRestaurant from "@/assets/bg-restaurant.png";
 
 const STORAGE_KEY = "burger-arena-cart";
 
