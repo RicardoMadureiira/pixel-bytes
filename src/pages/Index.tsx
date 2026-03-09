@@ -110,7 +110,7 @@ const Index = () => {
         <section ref={burgersReveal.ref}>
           <div className="mb-8 flex flex-col items-center gap-2">
             <h2
-              className={`text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-${burgersReveal.isVisible ? "animate-slide-up" : "opacity-0"}`"}`-0}
+              className={`text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-100 ${burgersReveal.isVisible ? "animate-slide-up" : "opacity-0"}`}
             >
               🍔 Escolha seu Buff 🍔
             </h2>
