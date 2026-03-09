@@ -5,6 +5,8 @@ import { burgers, drinks, type MenuItem } from "@/lib/menu-data";
 import MenuCard from "@/components/MenuCard";
 import CartModal, { type CartItem } from "@/components/CartModal";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+// import { burguer1 } from "@/assets/burguers";
+import logoBurger from "@/assets/LogoBurger.png";
 
 const STORAGE_KEY = "burger-arena-cart";
 
@@ -31,7 +33,7 @@ const Index = () => {
       const existing = prev.find((c) => c.id === item.id);
       if (existing)
         return prev.map((c) =>
-          c.id === item.id ? { ...c, quantity: c.quantity + 1 } : c
+          c.id === item.id ? { ...c, quantity: c.quantity + 1 } : c,
         );
       return [...prev, { ...item, quantity: 1 }];
     });
@@ -42,8 +44,8 @@ const Index = () => {
   const updateQuantity = useCallback((id: string, delta: number) => {
     setCart((prev) =>
       prev.map((c) =>
-        c.id === id ? { ...c, quantity: Math.max(1, c.quantity + delta) } : c
-      )
+        c.id === id ? { ...c, quantity: Math.max(1, c.quantity + delta) } : c,
+      ),
     );
   }, []);
 
@@ -71,7 +73,7 @@ const Index = () => {
           style={{ boxShadow: "var(--neon-shadow-lg)" }}
         >
           <img
-            src="/placeholder.svg"
+            src={logoBurger}
             alt="Logo Burger Arena"
             className="h-full w-full object-cover"
           />
@@ -116,7 +118,12 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
             {burgers.map((item, i) => (
-              <MenuCard key={item.id} item={item} onAdd={addToCart} delay={i * 100} />
+              <MenuCard
+                key={item.id}
+                item={item}
+                onAdd={addToCart}
+                delay={i * 100}
+              />
             ))}
           </div>
         </section>
@@ -139,7 +146,12 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
             {drinks.map((item, i) => (
-              <MenuCard key={item.id} item={item} onAdd={addToCart} delay={i * 100} />
+              <MenuCard
+                key={item.id}
+                item={item}
+                onAdd={addToCart}
+                delay={i * 100}
+              />
             ))}
           </div>
         </section>
@@ -148,7 +160,10 @@ const Index = () => {
       {/* Footer */}
       <footer
         className="border-t py-12"
-        style={{ borderColor: "hsl(var(--neon-glow) / 0.15)", background: "hsl(0 0% 3%)" }}
+        style={{
+          borderColor: "hsl(var(--neon-glow) / 0.15)",
+          background: "hsl(0 0% 3%)",
+        }}
       >
         <div className="mx-auto max-w-5xl px-4 flex flex-col items-center gap-5 text-center">
           <h3
