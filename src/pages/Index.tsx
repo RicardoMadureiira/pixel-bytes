@@ -20,7 +20,6 @@ const Index = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [badgePulse, setBadgePulse] = useState(false);
 
-  // Persist cart to localStorage
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
   }, [cart]);
@@ -61,34 +60,60 @@ const Index = () => {
   const drinksReveal = useScrollReveal(0.1);
 
   return (
-    <div className="min-h-screen bg-background font-body">
+    <div className="min-h-screen bg-zinc-950 font-body text-zinc-100">
       {/* Header */}
       <header
         ref={headerReveal.ref}
-        className={`flex flex-col items-center gap-3 py-10 opacity-0 ${headerReveal.isVisible ? "animate-fade-scale" : ""}`}
+        className={`flex flex-col items-center gap-3 py-14 opacity-0 ${headerReveal.isVisible ? "animate-fade-scale" : ""}`}
       >
-        <div className="h-24 w-24 overflow-hidden rounded-full border-2 border-primary shadow-[var(--neon-shadow)]">
+        <div
+          className="h-24 w-24 overflow-hidden rounded-full border-2 border-primary"
+          style={{ boxShadow: "var(--neon-shadow-lg)" }}
+        >
           <img
             src="/placeholder.svg"
             alt="Logo Burger Arena"
             className="h-full w-full object-cover"
           />
         </div>
-        <h1 className="font-display text-3xl font-black uppercase tracking-widest text-primary md:text-4xl">
+        <h1
+          className="font-display text-3xl font-black uppercase tracking-widest text-primary md:text-5xl"
+          style={{ textShadow: "var(--neon-shadow)" }}
+        >
           Burger Arena
         </h1>
-        <p className="text-sm text-muted-foreground">Level up no sabor 🎮</p>
+        <p className="text-sm text-zinc-500 tracking-widest uppercase font-display">
+          Level up no sabor 🎮
+        </p>
+
+        {/* Neon divider */}
+        <div
+          className="mt-4 h-px w-32"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, hsl(var(--neon-glow) / 0.6), transparent)",
+          }}
+        />
       </header>
 
       {/* Menu Grid */}
-      <main className="mx-auto max-w-5xl px-4 pb-24 space-y-12">
+      <main className="mx-auto max-w-5xl px-4 pb-28 space-y-14">
         {/* Seção Lanches */}
         <section ref={burgersReveal.ref}>
-          <h2
-            className={`mb-6 text-center font-display text-xl font-bold uppercase tracking-wider text-foreground opacity-0 ${burgersReveal.isVisible ? "animate-slide-up" : ""}`}
-          >
-            🍔 Lanches
-          </h2>
+          <div className="mb-8 flex flex-col items-center gap-2">
+            <h2
+              className={`text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-100 opacity-0 ${burgersReveal.isVisible ? "animate-slide-up" : ""}`}
+            >
+              🍔 Lanches
+            </h2>
+            <div
+              className="h-px w-16"
+              style={{
+                background:
+                  "linear-gradient(90deg, transparent, hsl(var(--neon-glow) / 0.5), transparent)",
+              }}
+            />
+          </div>
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
             {burgers.map((item, i) => (
               <MenuCard key={item.id} item={item} onAdd={addToCart} delay={i * 100} />
@@ -98,11 +123,20 @@ const Index = () => {
 
         {/* Seção Bebidas */}
         <section ref={drinksReveal.ref}>
-          <h2
-            className={`mb-6 text-center font-display text-xl font-bold uppercase tracking-wider text-foreground opacity-0 ${drinksReveal.isVisible ? "animate-slide-up" : ""}`}
-          >
-            🥤 Bebidas
-          </h2>
+          <div className="mb-8 flex flex-col items-center gap-2">
+            <h2
+              className={`text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-100 opacity-0 ${drinksReveal.isVisible ? "animate-slide-up" : ""}`}
+            >
+              🥤 Bebidas
+            </h2>
+            <div
+              className="h-px w-16"
+              style={{
+                background:
+                  "linear-gradient(90deg, transparent, hsl(var(--neon-glow) / 0.5), transparent)",
+              }}
+            />
+          </div>
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
             {drinks.map((item, i) => (
               <MenuCard key={item.id} item={item} onAdd={addToCart} delay={i * 100} />
@@ -112,12 +146,18 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border bg-[hsl(0,0%,6%)] py-10">
-        <div className="mx-auto max-w-5xl px-4 flex flex-col items-center gap-4 text-center">
-          <h3 className="font-display text-lg font-bold uppercase tracking-wider text-primary">
+      <footer
+        className="border-t py-12"
+        style={{ borderColor: "hsl(var(--neon-glow) / 0.15)", background: "hsl(0 0% 3%)" }}
+      >
+        <div className="mx-auto max-w-5xl px-4 flex flex-col items-center gap-5 text-center">
+          <h3
+            className="font-display text-lg font-black uppercase tracking-widest text-primary"
+            style={{ textShadow: "var(--neon-shadow)" }}
+          >
             Burger Arena
           </h3>
-          <p className="text-sm text-[hsl(0,0%,50%)] max-w-md">
+          <p className="text-sm text-zinc-600 max-w-md leading-relaxed">
             Projeto desenvolvido como parte do meu portfólio. Landing page de
             hamburgueria gamer com React, Tailwind CSS e TypeScript.
           </p>
@@ -126,7 +166,8 @@ const Index = () => {
               href="https://github.com/SEU-USUARIO"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[hsl(0,0%,40%)] transition-colors hover:text-primary"
+              className="text-zinc-600 transition-colors hover:text-primary"
+              style={{ transition: "color 0.2s, text-shadow 0.2s" }}
             >
               <Github className="h-5 w-5" />
             </a>
@@ -134,18 +175,18 @@ const Index = () => {
               href="https://linkedin.com/in/SEU-USUARIO"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[hsl(0,0%,40%)] transition-colors hover:text-primary"
+              className="text-zinc-600 transition-colors hover:text-primary"
             >
               <Linkedin className="h-5 w-5" />
             </a>
             <a
               href="mailto:seu@email.com"
-              className="text-[hsl(0,0%,40%)] transition-colors hover:text-primary"
+              className="text-zinc-600 transition-colors hover:text-primary"
             >
               <Mail className="h-5 w-5" />
             </a>
           </div>
-          <p className="text-xs text-[hsl(0,0%,30%)]">
+          <p className="text-xs text-zinc-700">
             © {new Date().getFullYear()} Seu Nome. Todos os direitos reservados.
           </p>
         </div>
@@ -154,7 +195,8 @@ const Index = () => {
       {/* Floating Cart Button */}
       <button
         onClick={() => setCartOpen(true)}
-        className="fixed bottom-6 right-6 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[var(--neon-shadow-lg)] transition-transform hover:scale-110"
+        className="fixed bottom-6 right-6 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform hover:scale-110"
+        style={{ boxShadow: "var(--neon-shadow-lg)" }}
         aria-label="Abrir carrinho"
       >
         <ShoppingCart className="h-6 w-6" />
