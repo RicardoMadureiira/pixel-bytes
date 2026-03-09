@@ -157,6 +157,7 @@ const CartModal = ({
                   <div className="flex items-center gap-1">
                     <button
                       onClick={() => onUpdateQuantity(item.id, -1)}
+                      aria-label={`Diminuir quantidade de ${item.name}`}
                       className="rounded-md bg-zinc-800 p-1.5 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-100 transition-colors"
                     >
                       <Minus className="h-3 w-3" />
