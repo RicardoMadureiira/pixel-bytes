@@ -4,8 +4,6 @@ import { ShoppingCart, Github, Linkedin, Mail } from "lucide-react";
 import { burgers, drinks, type MenuItem } from "@/lib/menu-data";
 import MenuCard from "@/components/MenuCard";
 import CartModal, { type CartItem } from "@/components/CartModal";
-import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-// import { burguer1 } from "@/assets/burguers";
 import logoBurger from "@/assets/LogoBurger.png";
 import bgRestaurant from "@/assets/bg-restaurant.png";
 
@@ -58,16 +56,11 @@ const Index = () => {
     setCart([]);
   }, []);
 
-  const headerReveal = useScrollReveal(0.1);
-  const burgersReveal = useScrollReveal(0.1);
-  const drinksReveal = useScrollReveal(0.1);
-
   return (
     <div className="min-h-screen bg-zinc-950 font-body text-zinc-100">
       {/* Header */}
       <header
-        ref={headerReveal.ref}
-        className={`relative flex flex-col items-center gap-3 py-28 ${headerReveal.isVisible ? "animate-fade-scale" : "opacity-0"}`}
+        className="relative flex flex-col items-center gap-3 py-28"
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(9,9,11,0.55) 0%, rgba(9,9,11,0.92) 100%), url(${bgRestaurant})`,
           backgroundSize: "cover",
@@ -93,8 +86,6 @@ const Index = () => {
         <p className="text-sm text-zinc-500 tracking-widest uppercase font-display">
           SUBA DE NÍVEL NO SABOR!
         </p>
-
-        {/* Neon divider */}
         <div
           className="mt-4 h-px w-32"
           style={{
@@ -107,11 +98,9 @@ const Index = () => {
       {/* Menu Grid */}
       <main className="mx-auto max-w-5xl px-4 pb-28 space-y-14">
         {/* Seção Lanches */}
-        <section ref={burgersReveal.ref}>
+        <section>
           <div className="mb-8 flex flex-col items-center gap-2">
-            <h2
-              className={`text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-100 ${burgersReveal.isVisible ? "animate-slide-up" : "opacity-0"}`}
-            >
+            <h2 className="text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-100">
               🍔 Escolha seu Buff 🍔
             </h2>
             <div
@@ -123,23 +112,16 @@ const Index = () => {
             />
           </div>
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-            {burgers.map((item, i) => (
-              <MenuCard
-                key={item.id}
-                item={item}
-                onAdd={addToCart}
-                delay={i * 150}
-              />
+            {burgers.map((item) => (
+              <MenuCard key={item.id} item={item} onAdd={addToCart} />
             ))}
           </div>
         </section>
 
         {/* Seção Bebidas */}
-        <section ref={drinksReveal.ref}>
+        <section>
           <div className="mb-8 flex flex-col items-center gap-2">
-            <h2
-              className={`text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-100 ${drinksReveal.isVisible ? "animate-slide-up" : "opacity-0"}`}
-            >
+            <h2 className="text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-100">
               ⚗️ Poções 🧪
             </h2>
             <div
@@ -151,13 +133,8 @@ const Index = () => {
             />
           </div>
           <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-            {drinks.map((item, i) => (
-              <MenuCard
-                key={item.id}
-                item={item}
-                onAdd={addToCart}
-                delay={i * 150}
-              />
+            {drinks.map((item) => (
+              <MenuCard key={item.id} item={item} onAdd={addToCart} />
             ))}
           </div>
         </section>
@@ -188,7 +165,6 @@ const Index = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="text-zinc-600 transition-colors hover:text-primary"
-              style={{ transition: "color 0.2s, text-shadow 0.2s" }}
             >
               <Github className="h-5 w-5" />
             </a>
