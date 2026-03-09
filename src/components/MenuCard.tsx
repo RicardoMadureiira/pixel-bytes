@@ -45,7 +45,7 @@ const MenuCard = ({ item, onAdd }: MenuCardProps) => {
       <h3 className="font-display text-sm font-bold uppercase tracking-wide text-zinc-100">
         {item.name}
       </h3>
-      <p className="mt-1 flex-1 text-xs text-zinc-500 leading-relaxed">
+      <p className="mt-1 flex-1 text-xs text-zinc-400 leading-relaxed">
         {item.description}
       </p>
       <div className="mt-3 flex items-center justify-between">
