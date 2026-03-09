@@ -77,7 +77,9 @@ const Index = () => {
         >
           <img
             src={logoBurger}
-            alt="Logo Burger"
+            alt="Logo Pixel Bytes"
+            width={160}
+            height={160}
             className="h-full w-full object-cover"
           />
         </div>

@@ -140,6 +140,10 @@ const CartModal = ({
                   <img
                     src={item.image}
                     alt={item.name}
+                    width={48}
+                    height={48}
+                    loading="lazy"
+                    decoding="async"
                     className="h-12 w-12 rounded-lg object-cover bg-zinc-800"
                   />
                   <div className="flex-1 min-w-0">
