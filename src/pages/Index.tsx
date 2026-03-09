@@ -91,7 +91,7 @@ const Index = () => {
           Burger Arena
         </h1>
         <p className="text-sm text-zinc-500 tracking-widest uppercase font-display">
-          Level up no sabor 🎮
+          SUBA DE NÍVEL NO SABOR!
         </p>
 
         {/* Neon divider */}
