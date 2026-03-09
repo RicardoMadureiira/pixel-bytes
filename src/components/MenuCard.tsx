@@ -33,11 +33,15 @@ const MenuCard = ({ item, onAdd, delay = 0 }: MenuCardProps) => {
       }}
       className={`group rounded-xl border bg-zinc-900 p-3 opacity-0 ${isVisible ? "animate-fade-up" : ""}`}
     >
-      <div className="mb-3 aspect-square overflow-hidden rounded-lg bg-zinc-800">
+      <div className="mb-3 aspect-square overflow-hidden rounded-lg bg-zinc-800 flex items-center justify-center p-2">
         <img
           src={item.image}
           alt={item.name}
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+          className={`transition-transform duration-300 group-hover:scale-110 ${
+            item.category === "drink"
+              ? "h-full w-auto object-contain drop-shadow-[0_0_8px_hsl(var(--neon-glow)/0.3)]"
+              : "h-full w-full object-cover"
+          }`}
         />
       </div>
       <h3 className="font-display text-sm font-bold uppercase tracking-wide text-zinc-100">
