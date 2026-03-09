@@ -150,7 +150,7 @@ const Index = () => {
               }}
             />
           </div>
-          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {drinks.map((item) => (
               <MenuCard key={item.id} item={item} onAdd={addToCart} />
             ))}
