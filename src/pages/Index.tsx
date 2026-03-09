@@ -7,6 +7,7 @@ import CartModal, { type CartItem } from "@/components/CartModal";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 // import { burguer1 } from "@/assets/burguers";
 import logoBurger from "@/assets/LogoBurger.png";
+import bgRestaurant from "@/assets/bg-restaurant.png";
 
 const STORAGE_KEY = "burger-arena-cart";
 
@@ -66,7 +67,12 @@ const Index = () => {
       {/* Header */}
       <header
         ref={headerReveal.ref}
-        className={`flex flex-col items-center gap-3 py-14 opacity-0 ${headerReveal.isVisible ? "animate-fade-scale" : ""}`}
+        className={`relative flex flex-col items-center gap-3 py-28 opacity-0 ${headerReveal.isVisible ? "animate-fade-scale" : ""}`}
+        style={{
+          backgroundImage: `linear-gradient(to bottom, rgba(9,9,11,0.55) 0%, rgba(9,9,11,0.92) 100%), url(${bgRestaurant})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
         <div
           className="h-24 w-24 overflow-hidden rounded-full border-2 border-primary"
