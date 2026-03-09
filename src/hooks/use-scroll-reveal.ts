@@ -8,6 +8,17 @@ export function useScrollReveal(threshold = 0.1) {
     const el = ref.current;
     if (!el) return;
 
+    // If already in viewport on mount, show immediately without animation
+    const rect = el.getBoundingClientRect();
+    if (
+      rect.top < window.innerHeight &&
+      rect.bottom > 0 &&
+      rect.top >= 0
+    ) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
