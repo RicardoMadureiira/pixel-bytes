@@ -1,6 +1,6 @@
 import type { MenuItem } from "@/lib/menu-data";
 import { Button } from "@/components/ui/button";
-import { Plus } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 interface MenuCardProps {
