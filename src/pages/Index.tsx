@@ -138,7 +138,7 @@ const Index = () => {
         <section ref={drinksReveal.ref}>
           <div className="mb-8 flex flex-col items-center gap-2">
             <h2
-              className={`text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-1${drinksReveal.isVisible ? "animate-slide-up" : "opacity-0"}y-0`}
+              className={`text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-100 ${drinksReveal.isVisible ? "animate-slide-up" : "opacity-0"}`}
             >
               ⚗️ Poções 🧪
             </h2>
