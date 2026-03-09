@@ -73,7 +73,7 @@ const Index = () => {
         >
           <img
             src={logoBurger}
-            alt="Logo Burger Arena"
+            alt="Logo Burger"
             className="h-full w-full object-cover"
           />
         </div>
@@ -161,7 +161,7 @@ const Index = () => {
           </p>
           <div className="flex gap-6">
             <a
-              href="https://github.com/SEU-USUARIO"
+              href="https://github.com/RicardoMadureiira"
               target="_blank"
               rel="noopener noreferrer"
               className="text-zinc-600 transition-colors hover:text-primary"
@@ -169,7 +169,7 @@ const Index = () => {
               <Github className="h-5 w-5" />
             </a>
             <a
-              href="https://linkedin.com/in/SEU-USUARIO"
+              href="https://www.linkedin.com/in/ricardo-madureira-490022245/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-zinc-600 transition-colors hover:text-primary"
@@ -177,7 +177,7 @@ const Index = () => {
               <Linkedin className="h-5 w-5" />
             </a>
             <a
-              href="mailto:seu@email.com"
+              href="mailto:ricardomadureira.dev@gmail.com"
               className="text-zinc-600 transition-colors hover:text-primary"
             >
               <Mail className="h-5 w-5" />
