@@ -64,7 +64,7 @@ const Index = () => {
     <div className="min-h-screen bg-zinc-950 font-body text-zinc-100">
       {/* Header */}
       <header
-        className="relative flex flex-col items-center gap-3 py-28"
+        className="relative flex min-h-screen flex-col items-center justify-center gap-3"
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(9,9,11,0.55) 0%, rgba(9,9,11,0.92) 100%), url(${bgRestaurant})`,
           backgroundSize: "cover",
