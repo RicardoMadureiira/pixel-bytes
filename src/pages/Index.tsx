@@ -175,7 +175,7 @@ const Index = () => {
           >
             Pixel Bytes
           </h3>
-          <p className="text-sm text-zinc-600 max-w-md leading-relaxed">
+          <p className="text-sm text-zinc-400 max-w-md leading-relaxed">
             Projeto desenvolvido como parte do meu portfólio. Landing page de
             hamburgueria gamer com React, Tailwind CSS e TypeScript.
           </p>
