@@ -89,7 +89,7 @@ const Index = () => {
         >
           Pixel Bytes
         </h1>
-        <p className="text-sm text-zinc-500 tracking-widest uppercase font-display">
+        <p className="text-sm text-zinc-400 tracking-widest uppercase font-display">
           SUBA DE NÍVEL NO SABOR!
         </p>
         <div
@@ -175,7 +175,7 @@ const Index = () => {
           >
             Pixel Bytes
           </h3>
-          <p className="text-sm text-zinc-600 max-w-md leading-relaxed">
+          <p className="text-sm text-zinc-400 max-w-md leading-relaxed">
             Projeto desenvolvido como parte do meu portfólio. Landing page de
             hamburgueria gamer com React, Tailwind CSS e TypeScript.
           </p>
@@ -184,7 +184,8 @@ const Index = () => {
               href="https://github.com/RicardoMadureiira"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-600 transition-colors hover:text-primary"
+              aria-label="GitHub de Ricardo Madureira"
+              className="text-zinc-400 transition-colors hover:text-primary"
             >
               <Github className="h-5 w-5" />
             </a>
@@ -192,18 +193,20 @@ const Index = () => {
               href="https://www.linkedin.com/in/ricardo-madureira-490022245/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-600 transition-colors hover:text-primary"
+              aria-label="LinkedIn de Ricardo Madureira"
+              className="text-zinc-400 transition-colors hover:text-primary"
             >
               <Linkedin className="h-5 w-5" />
             </a>
             <a
               href="mailto:ricardomadureira.dev@gmail.com"
-              className="text-zinc-600 transition-colors hover:text-primary"
+              aria-label="Enviar email para Ricardo Madureira"
+              className="text-zinc-400 transition-colors hover:text-primary"
             >
               <Mail className="h-5 w-5" />
             </a>
           </div>
-          <p className="text-xs text-zinc-700">
+          <p className="text-xs text-zinc-500">
             © {new Date().getFullYear()} Ricardo Madureira. Todos os direitos
             reservados.
           </p>
