@@ -67,7 +67,7 @@ const Index = () => {
       {/* Header */}
       <header
         ref={headerReveal.ref}
-        className={`relative flex flex-col items-center gap-3 py-28 opacity-0 ${headerReveal.isVisible ? "animate-fade-scale" : ""}`}
+        className={`relative flex flex-col items-center gap-3 py-28 ${headerReveal.isVisible ? "animate-fade-scale" : "opacity-0"}`}
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(9,9,11,0.55) 0%, rgba(9,9,11,0.92) 100%), url(${bgRestaurant})`,
           backgroundSize: "cover",
