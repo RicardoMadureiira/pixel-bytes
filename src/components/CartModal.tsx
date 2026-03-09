@@ -290,6 +290,10 @@ const CartModal = ({
             Nome: <span className="text-zinc-400 font-semibold">{name}</span>
           </div>
 
+          <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-xs text-amber-400/80">
+            ⚠️ Esta compra é apenas uma demonstração. Projeto de portfólio.
+          </div>
+
           <Button variant="neon" className="w-full mt-1" onClick={handleSuccessClose}>
             ✓ Confirmar Missão
           </Button>
