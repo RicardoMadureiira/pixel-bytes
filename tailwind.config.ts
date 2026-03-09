@@ -106,7 +106,7 @@ export default {
   			'fade-scale': {
   				'0%': {
   					opacity: '0',
-  					transform: 'scale(0.85)'
+  					transform: 'scale(0.9)'
   				},
   				'100%': {
   					opacity: '1',
@@ -128,7 +128,7 @@ export default {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
   			'fade-up': 'fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) forwards',
-  			'fade-scale': 'fade-scale 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards',
+  			'fade-scale': 'fade-scale 0.5s ease-out forwards',
   			'slide-up': 'slide-up 1s cubic-bezier(0.22, 1, 0.36, 1) forwards'
   		},
   		boxShadow: {
