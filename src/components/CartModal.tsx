@@ -201,13 +201,13 @@ const CartModal = ({
               {/* Form */}
               <div className="space-y-2">
                 <input
-                  placeholder="Jogador"
+                  placeholder="Jogador
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full rounded-lg border border-zinc-700 bg-zinc-900 px-3 py-2 text-sm text-zinc-100 placeholder:text-zinc-600 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
                 />
                 <input
-                  placeholder="CEP (apenas números)"
+                  placeholder="CEP 
                   value={cep}
                   onChange={(e) => handleCepChange(e.target.value)}
                   maxLength={8}
