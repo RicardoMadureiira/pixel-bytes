@@ -78,24 +78,50 @@ export default {
   		},
   		keyframes: {
   			'accordion-down': {
-  				from: { height: '0' },
-  				to: { height: 'var(--radix-accordion-content-height)' }
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
   			},
   			'accordion-up': {
-  				from: { height: 'var(--radix-accordion-content-height)' },
-  				to: { height: '0' }
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
   			},
   			'fade-up': {
-  				'0%': { opacity: '0', transform: 'translateY(30px)' },
-  				'100%': { opacity: '1', transform: 'translateY(0)' }
+  				'0%': {
+  					opacity: '0',
+  					transform: 'translateY(30px)'
+  				},
+  				'100%': {
+  					opacity: '1',
+  					transform: 'translateY(0)'
+  				}
   			},
   			'fade-scale': {
-  				'0%': { opacity: '0', transform: 'scale(0.9)' },
-  				'100%': { opacity: '1', transform: 'scale(1)' }
+  				'0%': {
+  					opacity: '0',
+  					transform: 'scale(0.9)'
+  				},
+  				'100%': {
+  					opacity: '1',
+  					transform: 'scale(1)'
+  				}
   			},
   			'slide-up': {
-  				'0%': { opacity: '0', transform: 'translateY(50px)' },
-  				'100%': { opacity: '1', transform: 'translateY(0)' }
+  				'0%': {
+  					opacity: '0',
+  					transform: 'translateY(50px)'
+  				},
+  				'100%': {
+  					opacity: '1',
+  					transform: 'translateY(0)'
+  				}
   			}
   		},
   		animation: {
@@ -116,19 +142,20 @@ export default {
   		},
   		fontFamily: {
   			sans: [
-  				'Roboto',
+  				'Work Sans',
   				'ui-sans-serif',
   				'system-ui',
   				'-apple-system',
   				'BlinkMacSystemFont',
   				'Segoe UI',
+  				'Roboto',
   				'Helvetica Neue',
   				'Arial',
   				'Noto Sans',
   				'sans-serif'
   			],
   			serif: [
-  				'Libre Caslon Text',
+  				'Lora',
   				'ui-serif',
   				'Georgia',
   				'Cambria',
@@ -137,7 +164,7 @@ export default {
   				'serif'
   			],
   			mono: [
-  				'Roboto Mono',
+  				'Inconsolata',
   				'ui-monospace',
   				'SFMono-Regular',
   				'Menlo',
