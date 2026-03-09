@@ -167,12 +167,14 @@ const CartModal = ({
                     </span>
                     <button
                       onClick={() => onUpdateQuantity(item.id, 1)}
+                      aria-label={`Aumentar quantidade de ${item.name}`}
                       className="rounded-md bg-zinc-800 p-1.5 text-zinc-400 hover:bg-zinc-700 hover:text-zinc-100 transition-colors"
                     >
                       <Plus className="h-3 w-3" />
                     </button>
                     <button
                       onClick={() => onRemove(item.id)}
+                      aria-label={`Remover ${item.name} do carrinho`}
                       className="ml-1 rounded-md p-1.5 text-destructive hover:bg-destructive/20 transition-colors"
                     >
                       <Trash2 className="h-3 w-3" />
