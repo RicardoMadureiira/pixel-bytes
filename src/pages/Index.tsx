@@ -146,19 +146,19 @@ const Index = () => {
               }}
             />
           </div>
-          <motion.div
-            variants={gridContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
-          >
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {burgers.map((item) => (
-              <motion.div key={item.id} variants={gridItem}>
+              <motion.div
+                key={item.id}
+                variants={gridItem}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 <MenuCard item={item} onAdd={addToCart} />
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </section>
 
         {/* Seção Bebidas */}
