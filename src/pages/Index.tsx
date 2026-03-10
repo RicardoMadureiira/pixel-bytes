@@ -19,18 +19,13 @@ const heroItem = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
 };
 
-const gridContainer = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1 } },
-};
-
 const gridItem = {
   hidden: { opacity: 0, rotateX: 90, transformOrigin: "bottom center" },
   show: {
     opacity: 1,
     rotateX: 0,
     transformOrigin: "bottom center",
-    transition: { type: "spring" as const, stiffness: 200, damping: 20 },
+    transition: { type: "spring" as const, stiffness: 200, damping: 20, duration: 0.4 },
   },
 };
 
