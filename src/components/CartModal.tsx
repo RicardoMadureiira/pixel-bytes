@@ -151,7 +151,10 @@ const CartModal = ({
                       {item.name}
                     </p>
                     <p className="text-xs font-display font-bold text-primary">
-                      R$ {(item.price * item.quantity).toFixed(2).replace(".", ",")}
+                      R${" "}
+                      {(item.price * item.quantity)
+                        .toFixed(2)
+                        .replace(".", ",")}
                     </p>
                   </div>
                   <div className="flex items-center gap-1">
@@ -257,7 +260,10 @@ const CartModal = ({
       </Sheet>
 
       {/* Level Up Success Dialog */}
-      <Dialog open={successOpen} onOpenChange={(v) => !v && handleSuccessClose()}>
+      <Dialog
+        open={successOpen}
+        onOpenChange={(v) => !v && handleSuccessClose()}
+      >
         <DialogContent
           className="max-w-sm border-2 bg-zinc-950 text-center"
           style={{
@@ -279,9 +285,13 @@ const CartModal = ({
               Level Up!
             </DialogTitle>
             <DialogDescription className="text-zinc-400 text-sm leading-relaxed">
-              Missão iniciada! Seus burgers serão dropados em:
+              Missão iniciada! Seus burgers serão enviados para:
             </DialogDescription>
           </DialogHeader>
+
+          <div className="text-xs text-zinc-400">
+            Nome: <span className="text-zinc-400 font-semibold">{name}</span>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -293,15 +303,15 @@ const CartModal = ({
             {addressLine}
           </motion.div>
 
-          <div className="text-xs text-zinc-400">
-            Jogador: <span className="text-zinc-400 font-semibold">{name}</span>
-          </div>
-
           <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-xs text-amber-400/80">
             ⚠️ Esta compra é apenas uma demonstração. Projeto de portfólio.
           </div>
 
-          <Button variant="neon" className="w-full mt-1" onClick={handleSuccessClose}>
+          <Button
+            variant="neon"
+            className="w-full mt-1"
+            onClick={handleSuccessClose}
+          >
             ✓ Confirmar Missão
           </Button>
         </DialogContent>

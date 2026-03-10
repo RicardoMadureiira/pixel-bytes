@@ -1,16 +1,17 @@
-import burger1 from "@/assets/burguers/burger1.png";
-import burger2 from "@/assets/burguers/burger2.png";
-import burger3 from "@/assets/burguers/burger3.png";
-import burger4 from "@/assets/burguers/burger4.png";
-import burger5 from "@/assets/burguers/burger5.png";
-import burger6 from "@/assets/burguers/burger6.png";
-import burger7 from "@/assets/burguers/burger7.png";
-import burger8 from "@/assets/burguers/burger8.png";
+import burger1 from "@/assets/BurgersWeb/burger1.webp";
+import burger2 from "@/assets/BurgersWeb/burger2.webp";
+import burger3 from "@/assets/BurgersWeb/burger3.webp";
+import burger4 from "@/assets/BurgersWeb/burger4.webp";
+import burger5 from "@/assets/BurgersWeb/burger5.webp";
+import burger6 from "@/assets/BurgersWeb/burger6.webp";
+import burger7 from "@/assets/BurgersWeb/burger7.webp";
+import burger8 from "@/assets/BurgersWeb/burger8.webp";
 
-import drink1 from "@/assets/refrigerantes/cocacola.png";
-import drink2 from "@/assets/refrigerantes/cocacola0.png";
-import drink3 from "@/assets/refrigerantes/guarana.png";
-import drink4 from "@/assets/refrigerantes/sprite.png";
+import drink1 from "@/assets/RefrigerantesWEb/cocacola.webp";
+import drink2 from "@/assets/RefrigerantesWEb/cocacola0.webp";
+import drink3 from "@/assets/RefrigerantesWEb/guarana.webp";
+import drink4 from "@/assets/RefrigerantesWEb/sprite.webp";
+
 export interface MenuItem {
   id: string;
   name: string;

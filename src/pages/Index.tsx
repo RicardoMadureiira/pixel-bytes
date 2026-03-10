@@ -5,8 +5,8 @@ import { burgers, drinks, type MenuItem } from "@/lib/menu-data";
 import MenuCard from "@/components/MenuCard";
 import CartModal, { type CartItem } from "@/components/CartModal";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import logoBurger from "@/assets/LogoBurger.png";
-import bgRestaurant from "@/assets/bg-restaurant.png";
+import logoBurger from "@/assets/LogoBurger.webp";
+import bgRestaurant from "@/assets/bg-restaurant.webp";
 
 const STORAGE_KEY = "burger-arena-cart";
 
@@ -72,7 +72,7 @@ const Index = () => {
         }}
       >
         <div
-          className="h-40 w-40 overflow-hidden rounded-full border-2 border-primary"
+          className="h-40 w-40 overflow-hidden rounded-full border-2 border-primary hover:scale-110 transition-transform duration-300"
           style={{ boxShadow: "var(--neon-shadow-lg)" }}
         >
           <img
@@ -108,7 +108,9 @@ const Index = () => {
           ref={burgersReveal.ref}
           style={{
             opacity: burgersReveal.isVisible ? 1 : 0,
-            transform: burgersReveal.isVisible ? "translateX(0)" : "translateX(48px)",
+            transform: burgersReveal.isVisible
+              ? "translateX(0)"
+              : "translateX(48px)",
             transition: "opacity 0.6s ease-out, transform 0.6s ease-out",
           }}
         >
@@ -136,13 +138,15 @@ const Index = () => {
           ref={drinksReveal.ref}
           style={{
             opacity: drinksReveal.isVisible ? 1 : 0,
-            transform: drinksReveal.isVisible ? "translateX(0)" : "translateX(48px)",
+            transform: drinksReveal.isVisible
+              ? "translateX(0)"
+              : "translateX(48px)",
             transition: "opacity 0.6s ease-out, transform 0.6s ease-out",
           }}
         >
           <div className="mb-8 flex flex-col items-center gap-2">
             <h2 className="text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-100">
-              ⚗️ Poções 🧪
+              ⚗️ Bebidas ⚗️
             </h2>
             <div
               className="h-px w-16"
@@ -177,7 +181,7 @@ const Index = () => {
           </h3>
           <p className="text-sm text-zinc-400 max-w-md leading-relaxed">
             Projeto desenvolvido como parte do meu portfólio. Landing page de
-            hamburgueria gamer com React, Tailwind CSS e TypeScript.
+            hamburgueria gamer com React, Tailwind CSS, TypeScript e API ViaCEP.
           </p>
           <div className="flex gap-6">
             <a
