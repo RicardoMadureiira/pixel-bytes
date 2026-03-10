@@ -179,9 +179,11 @@ const Index = () => {
           >
             Pixel Bytes
           </h3>
-          <p className="text-sm text-zinc-400 max-w-md leading-relaxed">
-            Projeto desenvolvido como parte do meu portfólio. Landing page de
-            hamburgueria gamer com React, Tailwind CSS, TypeScript e API ViaCEP.
+          <p className="text-sm text-zinc-400 max-w-sm leading-relaxed">
+            Desenvolvido por{" "}
+            <strong className="text-primary">Ricardo Madureira</strong>. Landing
+            page de hamburgueria utilizando React, Tailwind CSS, TypeScript e
+            API ViaCEP.
           </p>
           <div className="flex gap-6">
             <a
