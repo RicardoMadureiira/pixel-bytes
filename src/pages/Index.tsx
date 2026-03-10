@@ -4,11 +4,30 @@ import { ShoppingCart, Github, Linkedin, Mail } from "lucide-react";
 import { burgers, drinks, type MenuItem } from "@/lib/menu-data";
 import MenuCard from "@/components/MenuCard";
 import CartModal, { type CartItem } from "@/components/CartModal";
-import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import logoBurger from "@/assets/LogoBurger.webp";
 import bgRestaurant from "@/assets/bg-restaurant.webp";
 
 const STORAGE_KEY = "burger-arena-cart";
+
+const heroContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.2 } },
+};
+
+const heroItem = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+const gridContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.1 } },
+};
+
+const gridItem = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
+};
 
 const Index = () => {
   const [cart, setCart] = useState<CartItem[]>(() => {
@@ -57,9 +76,6 @@ const Index = () => {
     setCart([]);
   }, []);
 
-  const burgersReveal = useScrollReveal(0.1);
-  const drinksReveal = useScrollReveal(0.1);
-
   return (
     <div className="min-h-screen bg-zinc-950 font-body text-zinc-100">
       {/* Header */}
@@ -71,49 +87,53 @@ const Index = () => {
           backgroundPosition: "center",
         }}
       >
-        <div
-          className="h-40 w-40 overflow-hidden rounded-full border-2 border-primary hover:scale-110 transition-transform duration-300"
-          style={{ boxShadow: "var(--neon-shadow-lg)" }}
+        <motion.div
+          variants={heroContainer}
+          initial="hidden"
+          animate="show"
+          className="flex flex-col items-center gap-3"
         >
-          <img
-            src={logoBurger}
-            alt="Logo Pixel Bytes"
-            width={160}
-            height={160}
-            className="h-full w-full object-cover"
+          <motion.div
+            variants={heroItem}
+            className="h-40 w-40 overflow-hidden rounded-full border-2 border-primary hover:scale-110 transition-transform duration-300"
+            style={{ boxShadow: "var(--neon-shadow-lg)" }}
+          >
+            <img
+              src={logoBurger}
+              alt="Logo Pixel Bytes"
+              width={160}
+              height={160}
+              className="h-full w-full object-cover"
+            />
+          </motion.div>
+          <motion.h1
+            variants={heroItem}
+            className="font-display text-3xl font-black uppercase tracking-widest text-primary md:text-5xl"
+            style={{ textShadow: "var(--neon-shadow)" }}
+          >
+            Pixel Bytes
+          </motion.h1>
+          <motion.p
+            variants={heroItem}
+            className="text-sm text-zinc-400 tracking-widest uppercase font-display"
+          >
+            SUBA DE NÍVEL NO SABOR!
+          </motion.p>
+          <motion.div
+            variants={heroItem}
+            className="mt-4 h-px w-32"
+            style={{
+              background:
+                "linear-gradient(90deg, transparent, hsl(var(--neon-glow) / 0.6), transparent)",
+            }}
           />
-        </div>
-        <h1
-          className="font-display text-3xl font-black uppercase tracking-widest text-primary md:text-5xl"
-          style={{ textShadow: "var(--neon-shadow)" }}
-        >
-          Pixel Bytes
-        </h1>
-        <p className="text-sm text-zinc-400 tracking-widest uppercase font-display">
-          SUBA DE NÍVEL NO SABOR!
-        </p>
-        <div
-          className="mt-4 h-px w-32"
-          style={{
-            background:
-              "linear-gradient(90deg, transparent, hsl(var(--neon-glow) / 0.6), transparent)",
-          }}
-        />
+        </motion.div>
       </header>
 
       {/* Menu Grid */}
       <main className="mx-auto max-w-5xl px-4 pb-28 space-y-14">
         {/* Seção Lanches */}
-        <section
-          ref={burgersReveal.ref}
-          style={{
-            opacity: burgersReveal.isVisible ? 1 : 0,
-            transform: burgersReveal.isVisible
-              ? "translateX(0)"
-              : "translateX(48px)",
-            transition: "opacity 0.6s ease-out, transform 0.6s ease-out",
-          }}
-        >
+        <section>
           <div className="mb-8 flex flex-col items-center gap-2">
             <h2 className="text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-100">
               🍔 Escolha seu Buff 🍔
@@ -126,24 +146,23 @@ const Index = () => {
               }}
             />
           </div>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <motion.div
+            variants={gridContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.1 }}
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          >
             {burgers.map((item) => (
-              <MenuCard key={item.id} item={item} onAdd={addToCart} />
+              <motion.div key={item.id} variants={gridItem}>
+                <MenuCard item={item} onAdd={addToCart} />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </section>
 
         {/* Seção Bebidas */}
-        <section
-          ref={drinksReveal.ref}
-          style={{
-            opacity: drinksReveal.isVisible ? 1 : 0,
-            transform: drinksReveal.isVisible
-              ? "translateX(0)"
-              : "translateX(48px)",
-            transition: "opacity 0.6s ease-out, transform 0.6s ease-out",
-          }}
-        >
+        <section>
           <div className="mb-8 flex flex-col items-center gap-2">
             <h2 className="text-center font-display text-xl font-bold uppercase tracking-widest text-zinc-100">
               ⚗️ Bebidas ⚗️
@@ -156,11 +175,19 @@ const Index = () => {
               }}
             />
           </div>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <motion.div
+            variants={gridContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, amount: 0.1 }}
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          >
             {drinks.map((item) => (
-              <MenuCard key={item.id} item={item} onAdd={addToCart} />
+              <motion.div key={item.id} variants={gridItem}>
+                <MenuCard item={item} onAdd={addToCart} />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </section>
       </main>
 
