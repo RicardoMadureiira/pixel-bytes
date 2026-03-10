@@ -16,7 +16,11 @@ const heroContainer = {
 
 const heroItem = {
   hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" as const },
+  },
 };
 
 const gridItem = {
@@ -25,7 +29,12 @@ const gridItem = {
     opacity: 1,
     rotateX: 0,
     transformOrigin: "bottom center",
-    transition: { type: "spring" as const, stiffness: 200, damping: 20, duration: 0.4 },
+    transition: {
+      type: "spring" as const,
+      stiffness: 200,
+      damping: 20,
+      duration: 0.4,
+    },
   },
 };
 
@@ -206,12 +215,19 @@ const Index = () => {
           >
             Pixel Bytes
           </h3>
-          <p className="text-sm text-zinc-400 max-w-sm leading-relaxed">
-            Desenvolvido por{" "}
-            <strong className="text-primary">Ricardo Madureira</strong>. Landing
-            page de hamburgueria utilizando React, Tailwind CSS, TypeScript e
-            API ViaCEP.
-          </p>
+
+          <div className="space-y-1">
+            <p className="text-sm text-zinc-300">
+              Desenvolvido por{" "}
+              <strong className="text-primary font-bold">
+                Ricardo Madureira
+              </strong>
+            </p>
+            <p className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-medium">
+              React • TypeScript • Tailwind • API ViaCEP
+            </p>
+          </div>
+
           <div className="flex gap-6">
             <a
               href="https://github.com/RicardoMadureiira"
@@ -239,7 +255,8 @@ const Index = () => {
               <Mail className="h-5 w-5" />
             </a>
           </div>
-          <p className="text-xs text-zinc-500">
+
+          <p className="text-xs text-zinc-600">
             © {new Date().getFullYear()} Ricardo Madureira. Todos os direitos
             reservados.
           </p>
