@@ -25,7 +25,7 @@ const MenuCard = ({ item, onAdd }: MenuCardProps) => {
           "hsl(var(--border))";
         (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
       }}
-      className="group flex flex-col rounded-xl border bg-zinc-900 p-4"
+      className="group flex h-full flex-col rounded-xl border bg-zinc-900 p-4"
     >
       <div className="mb-3 aspect-square overflow-hidden rounded-lg bg-zinc-800 flex items-center justify-center p-2">
         <img
