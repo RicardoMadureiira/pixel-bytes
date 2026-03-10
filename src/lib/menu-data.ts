@@ -102,7 +102,7 @@ export const drinks: MenuItem[] = [
     name: "Coca-Cola - 350ml",
     description:
       "Bebida clássica dos heróis. Efeito imediato: +20 em velocidade e +15 em carisma.",
-    price: 7.9,
+    price: 5.9,
     image: drink1,
     category: "drink",
   },
@@ -110,7 +110,7 @@ export const drinks: MenuItem[] = [
     id: "d2",
     name: "Coca Cola - Zero",
     description: "Zero açúcar. Efeito: +10 em agilidade, -5 em culpa.",
-    price: 7.9,
+    price: 5.9,
     image: drink2,
     category: "drink",
   },
@@ -119,7 +119,7 @@ export const drinks: MenuItem[] = [
     name: "Guaraná - 350ml",
     description:
       "Direto da Amazônia digital. Efeito: +25 em stamina e +10 em vibe tropical.",
-    price: 7.9,
+    price: 5.9,
     image: drink3,
     category: "drink",
   },
@@ -128,7 +128,7 @@ export const drinks: MenuItem[] = [
     name: "Sprite - 350ml",
     description:
       "Refrescância elemental nível máximo. Efeito: +30 em frescor, chance de crítico contra calor.",
-    price: 9.9,
+    price: 5.9,
     image: drink4,
     category: "drink",
   },
