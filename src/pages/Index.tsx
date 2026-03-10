@@ -19,18 +19,13 @@ const heroItem = {
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
 };
 
-const gridContainer = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1 } },
-};
-
 const gridItem = {
   hidden: { opacity: 0, rotateX: 90, transformOrigin: "bottom center" },
   show: {
     opacity: 1,
     rotateX: 0,
     transformOrigin: "bottom center",
-    transition: { type: "spring" as const, stiffness: 200, damping: 20 },
+    transition: { type: "spring" as const, stiffness: 200, damping: 20, duration: 0.4 },
   },
 };
 
@@ -151,19 +146,19 @@ const Index = () => {
               }}
             />
           </div>
-          <motion.div
-            variants={gridContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
-          >
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {burgers.map((item) => (
-              <motion.div key={item.id} variants={gridItem}>
+              <motion.div
+                key={item.id}
+                variants={gridItem}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 <MenuCard item={item} onAdd={addToCart} />
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </section>
 
         {/* Seção Bebidas */}
@@ -180,19 +175,19 @@ const Index = () => {
               }}
             />
           </div>
-          <motion.div
-            variants={gridContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.1 }}
-            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
-          >
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {drinks.map((item) => (
-              <motion.div key={item.id} variants={gridItem}>
+              <motion.div
+                key={item.id}
+                variants={gridItem}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.3 }}
+              >
                 <MenuCard item={item} onAdd={addToCart} />
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </section>
       </main>
 
