@@ -11,12 +11,16 @@ const STORAGE_KEY = "burger-arena-cart";
 
 const heroContainer = {
   hidden: {},
-  show: { transition: { staggerChildren: 0.2 } },
+  show: { transition: { staggerChildren: 0.25 } },
 };
 
 const heroItem = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
+  hidden: { opacity: 0, rotateY: -90 },
+  show: {
+    opacity: 1,
+    rotateY: 0,
+    transition: { type: "spring" as const, stiffness: 260, damping: 20 },
+  },
 };
 
 const gridContainer = {
@@ -25,8 +29,12 @@ const gridContainer = {
 };
 
 const gridItem = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" as const } },
+  hidden: { opacity: 0, rotateY: -90 },
+  show: {
+    opacity: 1,
+    rotateY: 0,
+    transition: { type: "spring" as const, stiffness: 200, damping: 18 },
+  },
 };
 
 const Index = () => {
