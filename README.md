@@ -24,7 +24,7 @@ O projeto está publicado e pode ser acessado em:
 Este projeto foi construído com as seguintes tecnologias:
 
 * **React + Vite** - Biblioteca Javascript para construção da interface.
-* - **API ViaCEP**: Integração para busca automática de endereços a partir do CEP do usuário.
+* **API ViaCEP** - Integração para busca automática de endereços a partir do CEP do usuário.
 * **Tailwind CSS** - Framework CSS para estilização rápida e moderna.
 * **Node.js** - Ambiente de execução para lógica de backend.
 * **Vercel** - Hospedagem e deploy da aplicação.
